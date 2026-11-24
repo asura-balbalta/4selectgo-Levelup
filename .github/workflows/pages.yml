@@ -1,0 +1,41 @@
+# docs/ 폴더를 GitHub Pages 로 배포한다.
+# 저장소 Settings → Pages 의 Source 가 "GitHub Actions" 여야 한다.
+# 예: docs/privacy/index.html → https://asura-balbalta.github.io/4selectgo-Levelup/privacy/
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 배포가 겹치면 진행 중인 것은 끝까지 두고 대기 중인 것만 최신으로 바꾼다
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Configure Pages
+        uses: actions/configure-pages@v6
+      - name: Upload docs folder
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
