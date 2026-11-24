@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>레벨업 바둑</title>
+<meta name="description" content="AI가 추천한 네 수 중 하나를 고르거나 자유롭게 두며 급수를 올리는 1인용 바둑 게임.">
+<link rel="icon" href="store/play_icon_512.png">
+<style>
+  :root { --bg: #fffaf3; --fg: #2b1d0e; --muted: #6e5334; --line: #e6d3b0; --card: #fff3dc; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #1b1610; --fg: #f1e6d3; --muted: #b9a482; --line: #3d3223; --card: #251e15; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+         line-height: 1.7; word-break: keep-all; }
+  main { max-width: 860px; margin: 0 auto; padding: 40px 16px 64px; }
+  header { display: flex; align-items: center; gap: 20px; margin-bottom: 28px; }
+  header img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 6px; }
+  .tagline { margin: 0; color: var(--muted); }
+  .lead { font-size: 1.1rem; margin: 0 0 28px; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 36px; }
+  .shots img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 14px; }
+  h2 { font-size: 1.15rem; margin: 0 0 6px; }
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 0 0 36px; }
+  .features section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .features p { margin: 0; }
+  footer { border-top: 1px solid var(--line); padding-top: 20px; color: var(--muted); font-size: 0.95rem; }
+  footer p { margin: 0 0 4px; }
+  a { color: inherit; }
+  @media (max-width: 560px) {
+    .features { grid-template-columns: 1fr; }
+    header img { width: 72px; height: 72px; border-radius: 16px; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <img src="store/play_icon_512.png" alt="레벨업 바둑 앱 아이콘">
+  <div>
+    <h1>레벨업 바둑</h1>
+    <p class="tagline">4지선다 + 자유수 · Android</p>
+  </div>
+</header>
+
+<p class="lead">
+  바둑 AI와 대국하며 18급부터 9단까지 급수를 올려 가는 1인용 바둑 게임입니다.
+  AI가 추천한 네 수 중 하나를 고르거나, 원하는 자리에 자유롭게 둡니다.
+</p>
+
+<div class="shots">
+  <img src="store/screenshots/phone_01_game_midgame.png" alt="대국 화면. 바둑판 위에 추천수 네 개가 번호로 표시되어 있다." width="1080" height="1920">
+  <img src="store/screenshots/phone_03_review_move.png" alt="복기 화면. 둔 수와 가장 좋았던 수가 바둑판에 표시되어 있다." width="1080" height="1920">
+  <img src="store/screenshots/phone_05_home.png" alt="홈 화면. 현재 급수와 전적, 게임 규칙이 보인다." width="1080" height="1920">
+</div>
+
+<div class="features">
+  <section>
+    <h2>4지선다와 자유수</h2>
+    <p>내 차례가 되면 추천수 네 개가 바둑판에 표시됩니다. 그중 하나를 고르거나 빈 자리를 눌러 자유롭게 둘 수 있습니다.</p>
+  </section>
+  <section>
+    <h2>급수와 승급</h2>
+    <p>18급에서 9단까지. 2연승하면 한 급 올라가고 2연패하면 한 급 내려갑니다. 가입할 때 내 급수를 고를 수 있습니다.</p>
+  </section>
+  <section>
+    <h2>복기</h2>
+    <p>끝난 대국을 한 수씩 다시 보고, 다른 자리에 두어 보면 몇 번째로 좋은 수였는지 알려 줍니다.</p>
+  </section>
+  <section>
+    <h2>인터넷 없이</h2>
+    <p>바둑 AI인 KataGo가 기기 안에서 동작합니다. 계정과 전적, 대국 기록은 기기 안에만 저장됩니다. 광고와 결제가 없습니다.</p>
+  </section>
+</div>
+
+<footer>
+  <p><a href="privacy/">개인정보처리방침</a></p>
+  <p>개발자: asrbbt · 문의: yookyhy@gmail.com</p>
+</footer>
+
+</main>
+</body>
+</html>
